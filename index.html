@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartPark</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1220;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background: #111827;
+    }
+
+    header h1 {
+      color: #00f0c8;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #00f0c8;
+      color: black;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+    }
+
+    .search-box {
+      margin-top: 30px;
+    }
+
+    input {
+      padding: 12px;
+      width: 250px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .results {
+      padding: 40px;
+    }
+
+    .card {
+      background: #111827;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>SmartPark</h1>
+  <button onclick="alert('Login Coming Soon')">Login</button>
+</header>
+
+<section class="hero">
+  <h2>Find. Book. Park.</h2>
+  <p>Find nearest and cheapest parking instantly</p>
+
+  <div class="search-box">
+    <input type="text" id="location" placeholder="Enter location">
+    <button onclick="search()">Search</button>
+  </div>
+</section>
+
+<section class="results" id="results"></section>
+
+<script>
+  const data = [
+    { name: "Mall Parking", price: 20, dist: "0.5 km" },
+    { name: "Metro Parking", price: 15, dist: "1 km" },
+    { name: "Street Parking", price: 10, dist: "1.5 km" }
+  ];
+
+  function search() {
+    const container = document.getElementById("results");
+    container.innerHTML = "";
+
+    data.forEach(slot => {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <h3>${slot.name}</h3>
+        <p>Distance: ${slot.dist}</p>
+        <p>Price: ₹${slot.price}/hr</p>
+        <button onclick="book('${slot.name}')">Book</button>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  function book(name) {
+    alert("Booking confirmed for " + name);
+  }
+</script>
+
+</body>
+</html>
