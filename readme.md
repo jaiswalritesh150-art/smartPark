@@ -29,3 +29,4 @@ SmartPark is a real-world parking solution web app that helps users:
 
 ## Author
 Ritesh Jaiswal
+Shivam Kumar
