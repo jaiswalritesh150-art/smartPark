@@ -28,6 +28,5 @@ SmartPark is a real-world parking solution web app that helps users:
 - Payment Gateway
 
 ## Author
-Ritesh Jaiswal
-
-Shivam Kumar
+- Ritesh Jaiswal
+- Shivam Kumar
